@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 算数操作符 */
+        var s1 = 6;
+        var s2 = 3;
+        //+ - * /  %
+        //加减乘除  取余
+
+        /* 一元运算符 */
+        //一个值进行自身的运算
+        var n1 = 5;
+        n1++;
+        n1--;
+        //对自身操作+1或者-1
+        var n2 = 6;
+        console.log(n1 + ++n2);
+        console.log(n1 + n2++);
+        //操作符在变量前面，先进行自身运算，再进行其他运算
+        //操作符在变量后面，先进行其他运算，再进行自身运算
+        var a = 0;
+        var b = a++ + ++a;
+        console.log(b);
+
+
+    </script>
+</body>
+</html>
