@@ -57,11 +57,15 @@
             var n = parseFloat('h34')
             var l = parseFloat(null);
             var m = parseFloat(undefined);
-            console.log(j,k,l,m);
+            console.log(j,k,l,m,n);
 
             /* 其他类型转换成boolean类型 */
             var param1 = Boolean('0');
-
+            var param2 = Boolean(0);
+            var param3 = Boolean('2');
+            var param4 = Boolean(null);
+            var param5 = Boolean(undefined);
+            console.log(param1,param2,param3,param4,param5);
 
 
         </script>
