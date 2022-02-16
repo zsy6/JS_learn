@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            数据类型转换
+        </title>
+    </head>
+    <body>
+        <script>
+            /*其他类型转为字符串*/
+            var a = 5;
+            console.log(a.toString());
+            //字符串名.toString() 
+
+            var b = 4;
+            console.log(typeof String(b));
+            //String(字符串名);
+            //String()函数存在的意义：有些值没有toString()，可以用String()，例如undefined和null
+
+            var c = 6;
+            var s = ''+c;
+            //利用加号在数值前加上空字符串来将数值转成字符串
+
+            var d = true;
+            console.log(typeof d.toString());
+            //boolean型转成字符串
+
+
+            /* 其他类型转为数值型 */
+            /* 用Number来转换 */
+            var a = '1';
+            var b = Number(a);
+
+            var c = Number('c');
+            //此处因为c不是数值，不能转换
+            var d = Number(null);
+            //null这样转化会变成0
+            var e = Number(undefined);
+            //undefined也不是数值
+
+
+            /* 用parseInt来转换 */
+            var f = parseInt('2');
+            //只有这个可以用parseInt来转换
+            var g = parseInt('a123');
+            var h = parseInt(null);
+            var i = parseInt(undefined);
+            console.log(f,g,h,i);
+    
+            /* 用parseFloat来转换 */
+            var j = parseFloat('1.23df');
+            var k = parseFloat('1.2.3.4');
+            //前面是数字才可以转，遇到识别不了的就停止了
+            //例如前两个的结果为：1.23、1.2
+            //3、4、5不能被转换
+            var n = parseFloat('h34')
+            var l = parseFloat(null);
+            var m = parseFloat(undefined);
+            console.log(j,k,l,m);
+
+            /* 其他类型转换成boolean类型 */
+            var param1 = Boolean('0');
+
+
+
+        </script>
+    </body>
+</html>

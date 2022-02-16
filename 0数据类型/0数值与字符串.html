@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            数值与字符串
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            注释的规则和C语言一样
+            */
+
+            // 数据类型：数值型(Number)、字符串(String)、布尔型（Boolean）、undefined、null、对象
+            
+            var num1 = 3;
+            var a = "字符串1";
+            var b = 'string2';
+            //使用单引号或双引号引起来是字符串，即使里面是数字
+
+            var str1 = "测试'单引号'\f\f什么东西\x42"
+            var str2 = '测试\'单引号\''
+            alert(str1);
+            //如果需要在字符串里使用当次表示字符串的引号，需要加转义字符\
+
+            // 常用转义字符
+            // \n 换行  \t 制表  \b 空格 \r 回车  \f 进纸（换页）
+            // \\ 反斜杠  \'   \"    
+            // \xnn 以十六进制码nn表示的一个字符，n为0-F，例\x42打印出来是B
+            // \unnnn 以十六进制代码 nnnn 表示的一个 Unicode 字符（其中n为O ~F)。例如，lu03a3 表示希腊字符 Σ
+            //如果在一个正常字符前加反斜杠 js会将其忽略
+
+
+            var s1 = '1234';
+            console.log(s1.length);  //字符串名.length 获取字符串的长度
+            // 字符串相加为字符串拼接
+            // 当 数值+数值+字符串，会将前面两个数值相加的值作为字符串拼接后面的字符串
+            // 所以变量从前往后进行运算，如果两个变量都是数值型那么加号作为数学运算符
+            // 只要遇到一个字符串，此后所有的加号都是字符串拼接
+            
+
+            //boolean类型   true和false 区分大小写，计算机内部存储true为1，false为0
+            //undefined 一个声明了没有被赋值的变量，值默认为undefined
+            //null 表示一个空对象，变量的值要为null时，必须手动设置
+            //面试常问
+
+
+
+        </script>
+    </body>
+</html>
