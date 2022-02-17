@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的基本概念</title>
+</head>
+<body>
+    <script>
+        //创建数组的方式
+        /* 1 */
+        //字面量
+        var arr1 = []; 
+        //空数组
+        var arr2 = [1,"d"];
+        console.log(arr2[1]);
+        //会直接打印没有""的d
+
+        /* 2 */
+        //构造函数方式
+        var a1 = new Array(1,2,5,6);
+        //在括号内可以直接存值
+        console.log(a1);
+        console.log(a1.length);
+        //获取数组的长度
+
+        //多维数组
+        var a2 = [1,4,a1];
+        console.log(a2);
+
+        //获取数组元素和C语言一样使用下标
+        console.log(a2[2][2]);
+
+    </script>
+</body>
+</html>
