@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 作用域 */
+        //作用域：变量能起作用的范围和区域
+        //全局变量-任何地方都能访问到
+        //局部变量-只在固定的代码片段内可以访问到（比如函数内部的变量）
+
+        //不使用var声明的变量是全局变量，不推荐使用
+        //变量退出作用域后会销毁，全局变量关闭网页和浏览器后才会销毁
+
+
+
+        /* 变量提升-在代码执行之前，变量已经在编译阶段被声明了， */
+    
+        //JS代码运行分为两个阶段：
+        //1、解析阶段-语法检查，变量以及函数声明
+        //2、执行阶段：变量的赋值，代码流程的执行
+        //所以声明和赋值是分开的
+
+        /* 例子1 */
+        console.log(a);
+        var a=2;
+        //如果变量声明了，但是没有赋值，这个变量就是undefined
+
+        var a = 12;
+        function abc(){
+            console.log("a的值为"+a);
+            var a = 10;
+        }
+        abc();
+
+        /* 例子2 */
+        b();
+        console.log(b);  
+        //会打印出来函数，如果变量和函数声明同名了，函数声明会替换变量
+        //无论函数在前面还是在后面都会替换
+        var b = 3;
+        console.log(b);
+        function b() {
+            console.log('b函数执行了');
+        }
+        var b = 1;
+        console.log(b);    
+        //会打印出来1；后面的赋值又把b的函数声明声明替换掉
+        //函数是只有声明能覆盖变量的声明
+
+
+        /* 作用域链-函数内指向函数外的链式结构 */
+        //只有函数可以制造作用域结构
+        
+        var a = 1;
+        function f1(){
+            function f2(){
+                var a = "a在f2中的赋值";
+                function f3(){
+                    var a = "a在f3里的赋值";
+                    console.log("作用域链,a的值为"+a);
+                }
+                f3();
+            }
+            f2();
+        }
+        //  f3(); 直接使用f3会报：f3 is not defined
+        f1();
+        //作用域链的作用：
+        //函数中使用某个变量时，会先在自己的作用域中查找，找不到就会往上一层找，直到全局作用域
+        //如果最后还是找不到就报错
+ 
+    </script>
+</body>
+</html>

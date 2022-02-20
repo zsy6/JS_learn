@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>函数</title>
+    <title>函数声明与调用</title>
 </head>
 <body>
     <script>
@@ -37,6 +37,25 @@
 
 
        //形参与实参
+       //声明的时候是形参，多个形参逗号隔开，调用的时候实际传入的值是实参
+       //在函数中使用形参获取具体的值
+       //return 函数返回值;
+       //如果函数没有return，调用之后返回值是undefined
+       //如果 return ;  返回值也是 undefined
+       //return后的代码不会被执行，函数调用结束
+
+
+       //匿名函数与自调用
+       //匿名函数：函数本身是没有名字的
+       //可以通过将函数赋值给一个变量，这样就可以通过变量来调用
+       //自调用函数
+       /*
+       (function(){
+            alert(123);
+       })()
+       */
+       //函数括起来，后面也加一个小括号
+       //防止全局变量的污染，封装一个局部
 
  
     </script> 

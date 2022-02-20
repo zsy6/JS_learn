@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数当作参数</title>
+</head>
+<body>
+    <script>
+         function fn(){
+
+        }
+        console.log(typeof fn);
+        //function也是一种数据类型  属于object  （数组、函数）
+       
+
+       /* 函数作为参数 1 作为参数传入另一个函数里-回调 */
+        function f1(s){
+            console.log(s);
+            s();
+            
+        }
+        //发现JS的函数不用声明在使用的前面
+        f2();
+        function f2(){
+            console.log('f2在f1中通过形参引用执行了');
+        }
+        f1(f2); 
+        //回调
+
+
+       /* 函数作为参数 2 作为函数返回值-闭包 */
+       function fa(){
+           var a = 10;
+           var fb = function(){
+               console.log("fb被调用");
+           }
+           return fb;
+           //函数作为函数的返回值
+       }
+
+       var k = fa();
+       k();
+       //闭包
+
+    </script> 
+</body>
+</html>
