@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date对象</title>
+</head>
+<body>
+    <script>
+        var da = new Date();
+        /* 需要实例化构造函数获取时间对象 */
+        console.log(da);
+        //这个时间对象为标准时间
+
+        //获取当前日期
+        //console.log(da.now());
+        console.log(Date.now());
+        //Date.now()返回从1970年1月1日00:00到现在经过的毫秒数
+
+        console.log(da.getDate());
+        console.log(da.getMonth());  
+        //月份的数组是从0开始 
+        console.log(da.getFullYear());
+
+    </script> 
+</body>
+</html>

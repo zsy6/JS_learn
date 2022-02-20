@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包装对象</title>
+</head>
+<body>
+    <script>
+        /* 包装对象 */
+        var str = "123长度测试";
+        console.log(str.length);
+        
+        //三种原始类型：数值、字符串、布尔
+        //原始类型的数据在一定条件下，可以自动转为对象，这就是包装对象
+
+        /* 1 */
+        var v1 = new Number(1234);
+        console.log(v1);
+        //打印出来是 Number(1234)  Number(1234)就是对象
+        //原始值可以自动当作对象来调用，可以调用各种属性和方法，包装对象使用完会自动立即销毁
+        str.length; //就是在使用的这一刻转为对象，可以使用其length属性
+        //这个length属性在原型对象上，并不在这个对象上
+
+        /* 标准库对象 */
+        //JS提供了很多个内置对象：Math/Array/Number/String/Boolean...
+        //对象是带有属性和方法的特殊数据类型
+
+    </script>
+</body>
+</html>

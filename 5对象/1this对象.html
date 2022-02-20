@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this是个对象</title>
+</head>
+<body>
+    <script>
+        var obj1 = {
+            name:"詹姆斯",
+            age:18,
+            f1:function(){
+                var s = this.age;
+                console.log(s);
+            }
+        };
+        obj1.f1();
+        //1、函数在某个对象下时，其中的this就指向这个对象
+
+
+        //2、函数没有在某个对象下，其中的this指向windows对象
+        function f2(){
+            console.log(this.a);
+            console.log(this);
+        }
+        f2();  //会打印出来undefined
+        //this对象是有的，但是其中并没有a这个属性
+        //this指向全局对象（windows）
+
+        function fun(){
+            console.log(this.k);
+        }
+        var o1 = {
+            k:"这个是o1里面的k",
+            f:fun,
+        };
+        var o2 = {
+            k:"这个是o2里面的k",
+            f:fun,
+        };
+        var o3 = {
+            k:"这个是o3里面的k",
+            f:o2.f,
+        };
+
+        o1.f();
+        o2.f();
+        o3.f();
+        //this运行在哪个对象下，就指向哪个对象，就算是o3这种嵌套也是的
+
+    </script> 
+</body>
+</html>

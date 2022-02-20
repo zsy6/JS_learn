@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的遍历与删除</title>
+</head>
+<body>
+    <script>
+        function f1(){
+            console.log("这个是f1函数");
+        }
+        var obj1 = {
+            name:"路飞",
+            age:18,
+            height:190,
+            fun:f1,
+        }
+        //  for ... in
+        //  for(键 in 对象)
+        // for in 循环不仅可以循环变量对象，还可以循环遍历数组
+        for(var k in obj1){
+            console.log(obj1[k]);
+        }
+
+        var arr = [1,2,4,56,88];
+        for(var a in arr){
+            console.log(arr[a]);
+        }
+
+        console.log(obj1);
+        delete obj1;
+        //这样删除对象是没有用的，可以删除对象的某个属性
+        console.log(obj1);
+        delete obj1.height;
+        console.log(obj1);
+        
+    </script>
+</body>
+</html>

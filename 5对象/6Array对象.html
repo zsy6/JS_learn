@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array对象</title>
+</head>
+<body>
+    <script>
+        var arr = [1,6,4,3,2];
+        console.log(arr.length);
+
+        console.log(arr);
+        var i = 3;
+        arr.push(i);
+        //在数组的最后追加一个或多个元素
+        console.log(arr);
+
+
+        arr.pop();
+        //删除数组的最后一个元素
+        console.log(arr);
+
+        /* arr.slice() */
+        //slice返回一个新的数组对象，是一个由begin和end(不包括end)决定的原数组的浅拷贝
+        //不改变原数组
+        console.log(arr.slice(0,3));
+
+        var arr2 = ["a","b","c","d"];
+        console.log(arr2);
+        console.log(arr.concat(arr2));
+        console.log(arr2.concat(arr));
+
+        console.log(arr.join());
+        console.log(arr.join(''));
+        console.log(arr.join('-'));
+        //将数组所有元素连接成字符串并返回这个字符串 
+        //如果数组只有一个项目，将直接返回，不使用分隔符
+        //如果不传分隔符，默认用逗号隔开
+
+    </script>
+</body>
+</html>

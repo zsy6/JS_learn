@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String对象</title>
+</head>
+<body>
+    <script>
+        var s = 'this is a string';
+        console.log(s.length);
+
+        /* s.indexOf('i') */
+        var n = s.indexOf('i');
+        //字符串中第一次出现i的位置
+        console.log(s); 
+        console.log(n);
+
+        /* s.substr(m,n) */
+        //返回字符串中下标m开始到指定字符数n的字符
+        console.log("substr的值为"+s.substr(2,7));
+
+        /* s.toLowerCase() */
+        //全部字符转为小写
+        var str1 = "Java Script";
+        console.log(str1.toLowerCase());
+
+        /* s.toUpperCase() */
+        //全部字符转为大写
+        console.log(s.toUpperCase());
+
+        /* s.replace(pattern,replacement) */
+        //将字符串里的a替换成b，前面也可以是正则表达式
+        console.log(s.replace('i','I'));
+        console.log(s.replace(/is/,'正则替换'));
+        console.log(s.replace(/is/g,'正则全局替换'));
+        //在正则中使用g是全局替换的意思，否则和字符串都是默认替换匹配到的第一个的
+
+        var n = 1
+        console.log(n)
+        // 每一行代码结束，可以不加;，可以直接回车换行
+
+    </script> 
+</body>
+</html>
