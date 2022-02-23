@@ -8,21 +8,40 @@
 </head>
 <body>
     <div id="id1">
-        2022/2/23
+        2022/2/23 ID1内容
     </div>
     <div id="id3">
-        id3
+        id3内容
+        <span>子元素</span>
     </div>
+    <span>不是子元素</span>
+    <p>这是一个p标签</p>
+
     <script>
+        /* 通过ID获取元素 */
         //1、文档从上往下加载，所以script写到标签的下面
         //2、参数id是大小写敏感的
         //3、返回值是一个元素对象（文档对象模型）
-        //4、对象里的属性和方法可以通过dir打印
+        //4、对象里的属性和方法可以通过console.dir()打印查看
+        var getById = document.getElementById('id1');
+        console.log(getById);
+        console.log(typeof getById);  //返回 
+        console.dir(getById);
 
-        var getId = document.getElementById('id1');
-        console.log(getId);
-        console.log(typeof getId);  //返回 
-        console.dir(getId);
+        /* 通过标签名获取元素 */
+        //1、返回对象集合，以伪数组的形式存储(伪数组没有数组的方法)
+        //2、可以依次打印里面的元素对象
+        //3、只有一个、或没有这个元素，分别返回只有一个元素和空的伪数组
+        var getByName = document.getElementsByTagName('div');
+        console.log(getByName);
+        console.log(getByName[1]);
+        //可以获取某个元素（父元素）内部所有指定标签名的元素
+        //父元素必须是单个对象（指明），不能是伪数组，获取时不包含父元素自己
+        var getSonTag = getByName[1].getElementsByTagName('span');
+        console.log(getSonTag);  //也是一个伪数组
+        console.log(getSonTag[0]);
+
+        //  一般父元素用id来获取，子元素再用获取父元素的子元素的方法获取
 
     </script>
 </body>
