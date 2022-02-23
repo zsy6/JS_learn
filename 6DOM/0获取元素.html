@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom获取元素</title>
+</head>
+<body>
+    <div id="id1">
+        2022/2/23
+    </div>
+    <div id="id3">
+        id3
+    </div>
+    <script>
+        //1、文档从上往下加载，所以script写到标签的下面
+        //2、参数id是大小写敏感的
+        //3、返回值是一个元素对象（文档对象模型）
+        //4、对象里的属性和方法可以通过dir打印
+
+        var getId = document.getElementById('id1');
+        console.log(getId);
+        console.log(typeof getId);  //返回 
+        console.dir(getId);
+
+    </script>
+</body>
+</html>
