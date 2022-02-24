@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let变量声明</title>
+</head>
+<body>
+    <script>
+        //声明变量
+        let a;
+        let b,C;
+        //let a;　
+        var d = 1;
+        var d = 2;  
+        //1、用let声明变量不能被重复声明，用var是可以的，但var也不能重复声明let声明过的变量
+
+        //2、块级作用域
+        {
+            var name = "路飞";
+        }
+        {
+            let age = 18;
+        }
+        console.log(name);
+        //console.log(age);  
+        //let声明的作用域为代码块内 if else while for 循环内也如此
+        //var会往Windows的全局属性添加
+
+        //3、不存变量提升
+    
+        console.log(song);　//会打印出来undefined
+        var song = "风继续吹"; //在声明之前使用（解析和执行是两个阶段）
+
+        // console.log(flag);  在前面打印会报错
+        let flag = 1;　　
+
+        //4、不影响作用域链
+        {
+            let data = '0224';
+            function fn(){
+                console.log("测试作用域链的函数"+data);
+            }
+            fn();
+        }
+        fn(); //发现在外面运行函数没问题
+        //console.log(data); 在外面打印变量报错了
+
+
+
+    </script>
+</body>
+</html>
