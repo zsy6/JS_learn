@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量解构赋值</title>
+</head>
+<body>
+    <script>
+        //按一定的模式从数组和对象中提取值，对变量进行赋值
+        //数组
+        const numArr = [1,2,3,4] ;
+        const [A,B,C,D] = numArr ; 
+        console.log(A);
+        console.log(B);
+
+        //对象解构
+        const Obj1 = {
+            name: "lily",
+            age: 18 ,
+            fn: function(){
+                console.log("对象里的函数");
+            },
+        }
+
+        const {E,F,G} = Obj1;
+        console.log(E);
+        console.log(F);
+        console.log(G);
+        //这样会解构失败，数组的元素按次序排列，变量的取值由其位置决定
+        //对象的属性没有次序，变量要与属性同名才能取到正确的值
+
+        let {name} = Obj1 ;
+        console.log("解构出来的name是"+name);
+        let {fn} = Obj1;
+        fn();
+
+
+    </script>
+    
+</body>
+</html>

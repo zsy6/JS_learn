@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const变量</title>
+</head>
+<body>
+    <script>
+    // 使用基本与let相同
+    // 1. 声明时必须同时初始化变量
+    // 2. 不能修改const修改的变量的值
+    // 3. 声明的限制不影响其（数组、对象）指向的变量的引用
+    // 4. 不能用const变量声明迭代变量
+    const AGE = 18;
+    const TEAM = ['A','B','C'];
+    //TEAM = 19;
+    TEAM.push("DDD");
+    console.log(TEAM);
+
+    </script>
+</body>
+</html>

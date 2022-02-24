@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版字符串</title>
+</head>
+<body>
+    <script>
+        //1、引入新的声明字符串的方式
+        // ` `
+        const str = `字符串的内容` ;
+        console.log(str);
+
+        //2、``中间的内容中可以出现换行符
+        let str1 = `对象对象对
+                        换行试试
+                        象对象`;
+        
+        console.log(str1);
+
+        //3、模版字符串中 可以使用${}获取变量值拼接
+        let A = `123`;
+        let B = "8888";
+        let C = `${A}拼接${B}`;
+        console.log(C);                                                                                                       
+
+                                             
+    </script>
+</body>
+</html>
