@@ -29,13 +29,28 @@
         console.log(F);
         console.log(G);
         //这样会解构失败，数组的元素按次序排列，变量的取值由其位置决定
-        //对象的属性没有次序，变量要与属性同名才能取到正确的值
+        //对象的属性没有次序，变量要与属性同名才能取到正确的值（这个是简写语法）
 
         let {name} = Obj1 ;
         console.log("解构出来的name是"+name);
         let {fn} = Obj1;
         fn();
 
+        /* 非简写语法如下 */
+        let person = {
+            name:'yuyu',
+            age:'24'
+        };
+        let {name:yuyuname, age:yuyuage, job} = person;
+        console.log(yuyuname+yuyuage+job);
+        //解构赋值不一定要与对象的属性匹配，如果引用的属性不存在，对应变量的值就会是undefined
+        //也可以定义默认值
+        
+        let nameDec;
+        //如果给已经声明的变量赋值，赋值表达式必须在括号中
+        //否则报错：Uncaught SyntaxError: Unexpected token '='
+        ({name:nameDec} = person);
+        console.log(nameDec);
 
     </script>
     
