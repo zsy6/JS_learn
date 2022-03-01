@@ -9,8 +9,61 @@
 <body>
     <script>
         // ES6允许使用[箭头] =>  定义函数
-        // 声明一个函数
+
+        let fn  = (a,b) =>{
+            return a+b;
+        }
+        console.log(fn(1,2));
         
+        /* 1 */
+        //this是静态的，始终指向函数声明时作用域下的this的值
+        f1 = function(){
+            console.log(this.name);
+        }
+        let f2 = ()=>{
+            console.log(this.name);
+        }
+
+        window.name = 'yuyu' ;
+        const person = {
+            name:'jack'
+        };
+
+        f1();
+        f2();
+        //这里都打印yuyu
+
+        //call方法调用可以改变函数内部this的值
+        f1.call(person);    //这个打印jack
+        f2.call(person);    //这个打印yuyu
+
+        /* 2 */
+        //不能作为构造函数实例化对象
+        /*
+        let cat =(personName)=>{
+            this.personName = personName;
+        }
+        let me = new cat('yuyu');
+        */
+
+        /* 3 */
+        //不能使用arguments变量
+        f3 = function(){
+            console.log(arguments);
+        }
+        f3(1,2,3);
+        /*
+        let f4 =()=>{
+            console(arguments);        
+        }
+        f4(4,5);
+        */
+        //会报arguments is not defined
+
+
+        //箭头函数简写
+        //1、只有一个形参可以省略小括号
+        //2、只有一条语句时可以省略return和花括号，会返回那条语句的结果
 
     </script>
 </body>
