@@ -18,6 +18,7 @@
 <body>
     <div class="box"></div>
     <script>
+        /* 1 */
         //需要点击div 1秒后变颜色
         //获取元素
         let item = document.getElementsByClassName('box');
@@ -45,6 +46,12 @@
 
         }       
         );
+
+        /* 2 */
+        let arr = [1,2,3,4,5,6,7,9,12];
+        const result = arr.filter(item => item % 2 === 0);
+        console.log(result);
+
 
     </script>
 </body>
