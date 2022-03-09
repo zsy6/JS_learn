@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //...扩展运算符能将数组转换成逗号分隔的参数序列
+         const fruit = ['草莓','菠萝','芒果'];
+
+         function shuiguo(){
+             console.log(arguments);
+             console.log('yuyu');
+         }
+
+         shuiguo(...fruit);
+
+         //应用1：数组的合并
+         const pet = ['dog','cat','bird'];
+         const arr = [...fruit,...pet];
+         console.log(arr);
+
+         //应用2：数组拷贝
+         arr1 = [...arr];
+         console.log(arr1);
+         //如果数组有引用数据类型的话，是个浅拷贝，没有的话就是完全复制一个数组
+
+         //应用3：将伪数组转换为真正的数组
+         const items = document.querySelectorAll('div');
+         console.log(items);
+         const divArr = [...items];
+         console.log(divArr);
+
+    </script>
+</body>
+</html>
