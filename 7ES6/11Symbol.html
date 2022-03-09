@@ -8,6 +8,20 @@
 </head>
 <body>
     <script>
+        //创建Symbol
+        let s = Symbol();
+        console.log(s,typeof s);
+        let s2 = Symbol('测试symbol');
+        let s3 = Symbol('测试symbol');
+        console.log(s2 === s3);
+        //虽然这两个内容一样，但是其实是不一样的
+
+        let s4 = Symbol.for('测试2');
+        let s5 = Symbol.for('测试2');
+        console.log(s4 === s5);
+
+
+
 
 
     </script>
