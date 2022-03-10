@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+        //for  of 
+        //原生具备iterator接口的数据：Array、Set、Map、Set...
+        //工作原理：
+        //创建一个指针对象指向当前数据结构的起始位置，调用对象的next方法,返回对象，以及是否完成遍历
+
+
+        const fruits = ['apple','banana','orange'];
+
+        for(let i in fruits){
+            console.log(i);
+        }  //打印0，1，2
+
+        for(let i of fruits){
+            console.log(i);
+        }
+
+        let iterator = fruits[Symbol.iterator]();
+        console.log(iterator);  //打印这个 对象   发现有next方法
+
+        console.log(iterator.next());
+        //调用对象的next方法,返回含有value和done属性的对象
+
+
+        /* 自定义遍历数据 */
+        const group = {
+            name: 'happy-family',
+            students:[
+                'yuyu',
+                'yingying',
+                'tingting',
+                'xianxian'
+            ],
+            [Symbol.iterator](){
+                let index = 0;
+                //索引变量
+                let _this = this;
+                return{
+                    next: function(){
+                        if(index < _this.students.length){  
+                            let result = {
+                                value: _this.students[index],
+                                done:false  
+                                //不能每次都返回false，所以要有索引变量
+                            }
+                            index++;
+                            return result;
+                        }else{
+                            return{value:undefined, done:true};
+                        }
+                    }
+                }
+            }
+
+        }
+        //需要遍历这个对象中的数据
+        //这个对象group直接被遍历会报错
+
+        for(let i of group){
+            console.log(i);
+        }  
+        //直接这样会报错，要像上面那样，使用迭代器实现自定义的遍历数组
+
+    </script>
+    
+</body>
+</html>
