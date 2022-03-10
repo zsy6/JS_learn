@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6提供的异步编程解决方案，语法和传统函数不同
+        //之前异步编程用纯回调函数
+        //需要在function和函数名之间有一个*
+
+        function * gen(){
+            console.log("hello generator");
+            yield '两只兔子';
+            console.log("两只兔子后的部分");
+            yield '下雪了';
+            console.log("下雪之后");
+        }
+        let iterator = gen();
+        console.log(iterator);  //返回了一个迭代器对象
+        //可以借用迭代器对象的next方法执行
+        iterator.next();
+        iterator.next();
+
+        //遍历
+        for(let i of gen()){
+            console.log(i);
+        }
+
+        //生成器函数参数
+        //对异步编程的影响案例
+        function * gen1(name){
+            
+            console.log(name);
+
+            let result = yield 1;
+            console.log(result);
+
+            yield 2;
+            yield 3;
+        }
+        //执行获取迭代器对象
+        let iterator1 = gen1('yuyu');
+        console.log(iterator1.next());
+        //next语句可以返回实参，实参作为yield语句的返回结果
+        console.log(iterator1.next('第二个语句传入的实参'));
+        //第二个语句传入的实参，等于第一个yield的返回结果
+        console.log(iterator1.next());
+        console.log(iterator1.next());
+
+
+
+
+
+    </script>  
+</body>
+</html>
