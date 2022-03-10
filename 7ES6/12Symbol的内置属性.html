@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol内置属性</title>
+</head>
+<body>
+    <script>
+        class Person{
+            static [Symbol.hasInstance](){
+                console.log("用来检测类型");
+            }
+        }
+        let o = {};
+        console.log(o instanceof Person);
+
+        //Symbol.hasInstance 当其他对象使用instanceof运算符，
+        //判断是否为该对象的实例时，会调用这个方法
+
+        const arr = [1,2,3];
+        const arr2 = [4,5,6];
+        arr2[Symbol.isConcatSpreadable] = false; 
+        //表示该对象用于Array.prototype.concat时，是否可以展开
+        console.log(arr.concat(arr2));
+
+    </script>
+    
+</body>
+</html>

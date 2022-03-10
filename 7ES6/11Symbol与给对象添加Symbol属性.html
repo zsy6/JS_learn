@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建Symbol
+        let s = Symbol();
+        console.log(s,typeof s);
+        let s2 = Symbol('测试symbol');
+        let s3 = Symbol('测试symbol');
+        console.log(s2 === s3);
+        //虽然这两个内容一样，但是其实是不相等的
+
+        let s4 = Symbol.for('测试2');
+        let s5 = Symbol.for('测试2');
+        console.log(s4 === s5);
+        //此处相等
+
+        //不能与其他数据进行运算
+
+        //Symbol使用场景
+        //向对象中添加方法
+        //给对象添加symbol属性的方式
+        let game = {
+            name: 'yuyu',
+            up: function(){
+                console.log("这个是函数里的up");
+            }
+        }
+
+        let methods = {
+            up:Symbol(),
+            down:Symbol()
+        };
+        game[methods.up] = function(){
+            console.log("这个是up");
+        }
+        console.log(game);
+
+        //直接给对象添加独一无二的属性：
+        let obj = {
+            name : '狼人杀',
+            [Symbol('say')]: function(){
+                console.log("发言");
+            },
+            [Symbol('zibao')]: function(){
+                console.log("自曝");
+            }
+        }
+        console.log(obj);
+
+
+
+    </script>
+</body>
+</html>
