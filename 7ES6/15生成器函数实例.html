@@ -12,8 +12,47 @@
         //文件操作、网络（ajax request 数据库操作
 
         //定时器案例
+        //如果用定时器，需要一直回调
+        setTimeout(() => {
+            console.log('first print');
+                setTimeout(() =>{
+                    console.log('second print');
+                        setTimeout(()=>{
+                            console.log('third print');
+                        },1000)
+                },1000)
+        },1000)
          
+        function one(){
+            setTimeout(()=>{
+                            console.log('1 print');
+                            iterator.next();
+                        },4000)       
+        }
+        function two(){
+            setTimeout(()=>{
+                            console.log('2 print');
+                            iterator.next();
+                        },1000) 
+        }
+        function three(){
+            setTimeout(()=>{
+                            console.log('3 print');
+                            iterator.next();
+                        },1000)
+            
+        }
 
+
+        function * gen(){
+            console.log('语句开始之前');
+            yield one();
+            yield two();
+            yield three();
+        }
+        //调用生成器函数
+        let iterator  = gen();
+        iterator.next();
 
     </script> 
 </body>
