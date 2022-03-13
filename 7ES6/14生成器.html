@@ -45,15 +45,11 @@
         //执行获取迭代器对象
         let iterator1 = gen1('yuyu');
         console.log(iterator1.next());
-        //next语句可以返回实参，实参作为yield语句的返回结果
+        //next语句可以传入实参，实参作为yield语句的返回结果
         console.log(iterator1.next('第二个语句传入的实参'));
         //第二个语句传入的实参，等于第一个yield的返回结果
         console.log(iterator1.next());
         console.log(iterator1.next());
-
-
-
-
 
     </script>  
 </body>

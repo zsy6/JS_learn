@@ -54,6 +54,36 @@
         let iterator  = gen();
         iterator.next();
 
+
+        function getUsers(){
+            setTimeout(()=>{
+                let data = "用户数据";
+                //调用next方法，并将数据传入
+                iterator1.next(data);
+                //第二次调用next 这个实参会作用为第一个yield语句的返回结果
+                
+            },1000);
+        }
+        function getOrders(){
+            setTimeout(()=>{
+                let data = "订单数据";
+            },1000);
+        }
+        function getGoods(){
+            setTimeout(()=>{
+                let data = "商品数据";
+            },1000);
+        }
+
+        function * gen(){
+            yield getUsers();
+            yield getOrders();         
+            yield getGoods();         
+
+        }
+        let iterator1 = gen();
+        iterator1.next();
+
     </script> 
 </body>
 </html>
