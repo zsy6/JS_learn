@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        //实例化promise对象
+        //resolve  reject的名字可以自命名  一般都是这两个
+        //里面封装一个异步的操作
+        //得到这个数据后，可以调用resolve reject 来改变promise对象的状态
+        const p = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                //就当这个是异步操作
+                let data = '数据库中的数据';
+                resolve(data);
+                //调用resolve之后，promise对象的状态会为成功
+
+                //如果数据读取失败 
+                //可以调用reject，调用reject会导致promise状态为失败
+
+
+            },1000);
+            
+        })
+
+        //调用promise对象的then方法
+        //then接收两个函数类型的参数
+        //promise状态为成功（调用了resolve   then方法就会执行第一个回调函数
+        //promise失败就调用第二个回调函数
+        p.then(function(value){
+            console.log(value);   //会输出 “数据库中的数据”
+        },function(reason){
+
+        })
+
+    </script>
+    
+</body>
+</html>
